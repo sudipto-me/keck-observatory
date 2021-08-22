@@ -82,7 +82,7 @@
 	.main_header .navbar-toggler .icon-bar {
 		width: 25px;
 		height: 3px;
-		background: #06102B;
+		background: #ffffff;
 		display: block;
 		margin: 5px 0;
 	}
@@ -733,3 +733,4 @@
 /* ======================
 ==    End of media 360px
 ========================*/
+

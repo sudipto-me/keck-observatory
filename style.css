@@ -9,3 +9,169 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: keck-observatory
 */
+.dropdown, .navbar {
+    position: inherit !important;
+}
+
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-menu {
+    /* float: left; */
+    width: 100%;
+    justify-content: center;
+    border: none;
+    margin: 0;
+    background-color: #f2f2f2;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+ul.dropdown-menu li {
+    display: inline-block;
+}
+
+.dropdown-menu::before {
+    position: absolute;
+    content: attr(data-title);
+    top: 32%;
+    left: 10%;
+    border-right: 2px solid #dddddd;
+    font-size: 30px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-right: 38px;
+    font-family: 'Playfair Display', serif;
+}
+
+ul.dropdown-menu li a {
+    font-size: 14px;
+    line-height: 24px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 400;
+}
+
+ul.dropdown-menu li a:hover,
+ul.dropdown-menu li a:focus,
+ul.dropdown-menu li a:active {
+    font-weight: 700;
+}
+
+ul.dropdown-menu li a:hover:after {
+    content: "";
+    height: 0;
+}
+
+.header-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_menu li.site_cta a {
+    background: #ffffff;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 18px 48px !important;
+    letter-spacing: 0.2em;
+    -webkit-transition: all 0.3s linear !important;
+    -o-transition: all 0.3s linear !important;
+    transition: all 0.3s linear !important;
+    border: none !important;
+    outline: none !important;
+    display: none;
+}
+
+@media screen and (min-width: 576px) {
+    .header-container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header-container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header-container {
+        max-width: 95%;
+    }
+    .header_menu li.site_cta a{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header-container {
+        max-width: 95%;
+    }
+
+}
+
+@media screen and (min-width: 992px ) and (max-width: 1199px) {
+    .header_menu li a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .desktop_menu .site_cta a {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header-container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1200px ) and (max-width: 1399px) {
+    .header_menu li a {
+        padding: 10px 14px;
+    }
+}
+
+@media screen and (min-width: 1399px ) {
+    .header-container {
+        max-width: 95%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .header-container {
+        max-width: 1366px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .header-container {
+        max-width: 1420px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .header-container {
+        max-width: 1704px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+

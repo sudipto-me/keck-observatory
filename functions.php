@@ -155,8 +155,8 @@ function widgets_callback_function() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts_callback_function' );
 function theme_enqueue_scripts_callback_function() {
     $themeTemplateDirectoryUrl = get_template_directory_uri();
-    wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap', false );
-    wp_enqueue_style( 'custom-currency-fonts', '//fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap', false );
+    wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap', false );
+    wp_enqueue_style( 'custom-header-fonts', '//fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap', false );
     wp_enqueue_style( 'abcd-bootstrap', $themeTemplateDirectoryUrl . '/assets/css/bootstrap.min.css' );
     wp_enqueue_style( 'abcd-wow', $themeTemplateDirectoryUrl . '/assets/css/animate.css' );
     wp_enqueue_style( 'abcd-fontawesome', $themeTemplateDirectoryUrl . '/assets/css/font-awesome.min.css' );
@@ -199,28 +199,17 @@ function theme_enqueue_scripts_callback_function() {
 }
 
 
-add_filter( 'wp_nav_menu_items', 'abcd_add_menu_item', 10, 2 );
+ add_filter( 'wp_nav_menu_items', 'abcd_add_menu_item', 10, 2 );
 /**
  * Add Menu Item to end of menu
  */
 function abcd_add_menu_item( $items, $args ) {
-    $request_uri = $_SERVER['REQUEST_URI'];
-    //var_dump( $request_uri );
-    if ( $args->theme_location == 'primary_navigation' ) {
-        if ( ( is_user_logged_in() && '/dashboard/' == $request_uri ) || ( is_user_logged_in() && strpos( $request_uri, '/dashboard/' ) !== false ) ) {
-            $custom_menu_link = wp_logout_url();
-            $custom_menu_text = __( 'Log Out', 'abcd' );
-        } elseif ( is_user_logged_in() && '/dashboard/' != $request_uri ) {
-            $custom_menu_link = home_url( '/dashboard' );
-            $custom_menu_text = __( 'Dashboard', 'abcd' );
-        } else {
-            $custom_menu_link = home_url( '/login' );
-            $custom_menu_text = __( 'Log In', 'abcd' );
-        }
-        $items .= '<li class="site_cta"><a href="' . $custom_menu_link . '">' . $custom_menu_text . '</a>';
-    }
-    
-    return $items;
+	$theme_options   = get_option( 'theme-options' );
+	$header_btn_url  = ( ! empty( $theme_options['theme-cta']['url'] ) ) ? $theme_options['theme-cta']['url'] : '#';
+	$header_btn_text = ( ! empty( $theme_options['theme-cta']['text'] ) ) ? $theme_options['theme-cta']['text'] : __( 'Donate', 'keck-observatory' );
+	$items .= '<li class="site_cta"><a href="' . $header_btn_url . '">' . $header_btn_text . '</a>';
+
+	return $items;
 }
 
 /**
