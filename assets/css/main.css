@@ -47,6 +47,7 @@ h5 {
     line-height: 1.5;
     color: #042825;
     margin: 0 0 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -937,11 +938,8 @@ a.edd-cancel-discount.site_cta {
 ========================*/
 
 .site_footer {
-    background: url(../img/footer_bg.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-color: #EFEFEF !important;
+    background-color: #000000 !important;
+    position: relative;
 }
 
 .footer_section {
@@ -949,8 +947,11 @@ a.edd-cancel-discount.site_cta {
 }
 
 h3.widget_title {
-    font-size: 24px;
-    line-height: 1.2;
+    font-size: 19px;
+    line-height: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: 'Rubik',sans-serif;
 }
 
 ul.quick_links {
@@ -1027,8 +1028,8 @@ ul.footer_social li a:focus {
 }
 
 .copyright_section {
-    border-top: 1px solid #d2d2d2;
-    padding: 15px 0;
+    border-top: 1px solid #2d2d2d;
+    padding: 37px 0;
 }
 
 .copyright_section p {

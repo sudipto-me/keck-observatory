@@ -117,7 +117,7 @@ function widgets_callback_function() {
             'id'            => 'footer-widget-area-1',
             'description'   => '',
             'class'         => 'sidebar',
-            'before_widget' => '<aside id="%1$s" class="abcd_footer-content %2$s">',
+            'before_widget' => '<aside id="%1$s" class="footer-content %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h3 class="widget_title">',
             'after_title'   => '</h3>',
@@ -129,7 +129,7 @@ function widgets_callback_function() {
             'id'            => 'footer-widget-area-2',
             'description'   => '',
             'class'         => 'sidebar',
-            'before_widget' => '<aside id="%1$s" class="abcd_footer-content %2$s">',
+            'before_widget' => '<aside id="%1$s" class="footer-content %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h3 class="widget_title">',
             'after_title'   => '</h3>',
@@ -141,12 +141,24 @@ function widgets_callback_function() {
             'id'            => 'footer-widget-area-3',
             'description'   => '',
             'class'         => 'sidebar',
-            'before_widget' => '<aside id="%1$s" class="abcd_footer-content %2$s">',
+            'before_widget' => '<aside id="%1$s" class="footer-content %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h3 class="widget_title">',
             'after_title'   => '</h3>',
         )
     );
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer Widget Area 4', 'abcd' ),
+			'id'            => 'footer-widget-area-4',
+			'description'   => '',
+			'class'         => 'sidebar',
+			'before_widget' => '<aside id="%1$s" class="footer-content %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget_title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 
 /* -----------------------------------------------------------------------------

@@ -89,7 +89,131 @@ ul.dropdown-menu li a:hover:after {
     outline: none !important;
     display: none;
 }
+.footer-container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.footer-top-content {
+    background: #f2f2f2;
+    padding-top: 81px;
+    padding-bottom: 81px;
+    margin-top: -60px;
+}
 
+.footer-top-content .subscribe-section {
+    text-align: center;
+}
+
+.footer-top-content .subscribe-section h2 {
+    font-size: 38px;
+    line-height: 1em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.footer-top-content .subscribe-section p {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+.footer-top-content .subscribe-section .subscribe_form {
+    max-width: 49%;
+    margin: 0 auto;
+}
+
+.subscribe_form .form-control {
+    position: relative;
+    height: 74px;
+    padding-left: 40px;
+    transition: none;
+    border: none;
+
+}
+.subscribe_form .form-control:hover,.subscribe_form .form-control:active,.subscribe_form .form-control:focus {
+    box-shadow: none;
+    border: none;
+    background: #ffffff;
+    color: inherit;
+}
+.mc4wp-form-fields {
+    position: relative;
+}
+.subscribe_form .site_cta {
+    background: #000000;
+    color: #ffffff;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+}
+.copyright-text,.footer-social {
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+    color: #a5a7ac;
+}
+
+.copyright-text a,.footer-social a {color: #a5a7ac;}
+
+.footer-social ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.footer-social li {
+    margin-right: 18px;
+}
+
+.footer-social li:last-child {
+    margin-right: 0;
+}
+.site-map {
+    display: flex;
+}
+
+.site-map .right {
+    margin-left: 18px;
+}
+
+
+.site-map .left {
+    margin-right: 18px;
+}
+.site-map {
+    display: flex;
+    /* margin-top: 13px; */
+}
+
+.site-map .right {
+    margin-left: 18px;
+}
+
+
+.site-map .left {
+    margin-right: 18px;
+}
+
+.site-map ul li,.quick-links ul li {
+    list-style: none;
+}
+
+.site-map ul li a, .quick-links ul li a,.contact-us a {
+    font-size: 14px;
+    line-height: 2.14em;
+    color: #a5a7ac;
+}
+
+.contact-us p {
+    font-size: 14px;
+    line-height: 1.57em;
+    color: #a5a7ac;
+}
+.contact-us p.phone {
+    margin-bottom: 2px;
+}
 @media screen and (min-width: 576px) {
     .header-container {
         max-width: 540px;
@@ -173,5 +297,52 @@ ul.dropdown-menu li a:hover:after {
     }
 }
 
+@media screen and (min-width: 576px){
+    .footer-container {
+        max-width: 540px;
+    }
+}
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 767px) {
+    .footer-social {
+        float: left !important;
+    }
+    .footer-top-content .subscribe-section .subscribe_form {
+        max-width: 70%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .footer-container {
+        max-width: 720px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .footer-container {
+        max-width: 960px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .subscribe_form .site_cta {
+        position: inherit;
+        margin-top: 10px;
+        top: 0;
+        right: 0;
+    }
+    .footer-content {
+        margin-top: 20px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .footer-container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1366px){
+    .footer-container {
+        max-width: 1240px;
+    }
+}
 
 

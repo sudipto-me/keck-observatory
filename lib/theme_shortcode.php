@@ -4,7 +4,7 @@
  */
 function footer_social_shortcode_callback( $atts, $content = null ) {
     ob_start();
-    $theme_options = get_option( 'abcd' );
+    $theme_options = get_option( 'theme-options' );
     $social_links  = $theme_options['theme-social-repeater'];
     
     if ( is_array( $social_links ) && ! empty( $social_links ) ) { ?>
