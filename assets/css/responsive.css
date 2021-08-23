@@ -734,3 +734,146 @@
 ==    End of media 360px
 ========================*/
 
+/* New Media Query*/
+@media screen and (min-width: 576px) {
+	.header-container {
+		max-width: 540px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.header-container {
+		max-width: 720px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.header-container {
+		max-width: 95%;
+	}
+	.header_menu li.site_cta a{
+		display: block;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.header-container {
+		max-width: 95%;
+	}
+
+}
+
+@media screen and (min-width: 992px ) and (max-width: 1199px) {
+	.header_menu li a {
+		padding: 10px;
+		font-size: 16px;
+	}
+
+	.desktop_menu .site_cta a {
+		padding: 15px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.header-container {
+		max-width: 1140px;
+	}
+}
+
+@media screen and (min-width: 1200px ) and (max-width: 1399px) {
+	.header_menu li a {
+		padding: 10px 14px;
+	}
+}
+
+@media screen and (min-width: 1399px ) {
+	.header-container {
+		max-width: 95%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.header-container {
+		max-width: 1366px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.header-container {
+		max-width: 1420px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.header-container {
+		max-width: 1704px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 576px){
+	.footer-container {
+		max-width: 540px;
+	}
+}
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 767px) {
+	.footer-social {
+		float: left !important;
+	}
+	/*.footer-top-content .subscribe-section .subscribe_form {*/
+	/*    max-width: 70%;*/
+	/*}*/
+	.footer-top-content .subscribe-section h2 {
+		font-size: 24px;
+	}
+	.mc4wp-form-fields::after {
+		top: 18%;
+	}
+}
+@media screen and (min-width: 768px) {
+	.footer-container {
+		max-width: 720px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.footer-container {
+		max-width: 960px;
+	}
+}
+@media screen and (max-width: 991px) {
+	.subscribe_form .site_cta {
+		position: inherit;
+		margin-top: 10px;
+		top: 0;
+		right: 0;
+	}
+	.footer-content {
+		margin-top: 20px;
+	}
+	.mc4wp-form-fields::after {
+		top: 18%;
+	}
+	.footer-top-content .subscribe-section .subscribe_form {
+		max-width: 90%;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.footer-container {
+		max-width: 1140px;
+	}
+}
+@media (min-width: 1366px){
+	.footer-container {
+		max-width: 1240px;
+	}
+}

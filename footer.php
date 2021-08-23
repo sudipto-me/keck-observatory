@@ -1,7 +1,7 @@
 <?php
 $theme_options        = get_option( 'theme-options' );
-$footer_top_title     = ( ! empty( $theme_options['theme-footer-top-heading'] ) ) ? $theme_options['theme-footer-top-heading'] : __( 'Be part of our mission', 'jms-vip-limo' );
-$footer_top_sub_title = ( ! empty( $theme_options['theme-footer-top-subheading'] ) ) ? $theme_options['theme-footer-top-subheading'] : __( 'Join our newsletter', 'jms-vip-limo' );
+$footer_top_title     = ( ! empty( $theme_options['theme-footer-top-heading'] ) ) ? $theme_options['theme-footer-top-heading'] : __( 'Be part of our mission', 'keck-observatory' );
+$footer_top_sub_title = ( ! empty( $theme_options['theme-footer-top-subheading'] ) ) ? $theme_options['theme-footer-top-subheading'] : __( 'Join our newsletter', 'keck-observatory' );
 $copyright            = ( ! empty( $theme_options['theme-copyright-content'] ) ) ? $theme_options['theme-copyright-content'] : '';
 $footer_script        = ( ! empty( $theme_options['footer-script'] ) ) ? $theme_options['footer-script'] : '';
 ?>
