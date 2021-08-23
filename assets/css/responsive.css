@@ -851,6 +851,15 @@
 	}
 }
 @media screen and (max-width: 991px) {
+	.dropdown-toggle::after {
+		display: inherit;
+	}
+	.dropdown-menu.show {
+		display: block;
+	}
+	ul.dropdown-menu li {
+		display: block;
+	}
 	.subscribe_form .site_cta {
 		position: inherit;
 		margin-top: 10px;
