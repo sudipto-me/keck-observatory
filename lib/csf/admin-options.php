@@ -92,6 +92,11 @@ if ( class_exists( 'CSF' ) ) {
 						'type'  => 'text',
 						'title' => __( 'Link', 'keck-observatory' )
 					),
+					array(
+						'id'    => 'social-name',
+						'type'  => 'text',
+						'title' => __( 'Name', 'keck-observatory' )
+					),
 				),
 			),
 		)

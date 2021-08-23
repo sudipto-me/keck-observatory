@@ -1,13 +1,9 @@
 (function ($) {
     "use strict";
-    $('.menu-item-has-children>.dropdown-toggle').on('click',function(e){
+    $('.menu-item-has-children>.dropdown-toggle').on('click', function (e) {
         var items = $(this).attr('title');
-        console.log(items);
-         $('.dropdown-toggle').parents('.navbar-nav').find('.dropdown-menu').attr('data-title', items);
+        $('.dropdown-toggle').parents('.navbar-nav').find('.dropdown-menu').attr('data-title', items);
     });
-
-
-
 
 
     var wow = new WOW(
@@ -434,7 +430,6 @@
     //         //window.history.replaceState({}, document.title, clean_uri);
     //      }
     // });
-
 
 
     // $('.menu-item-has-children>a').removeAttr('data-toggle');
