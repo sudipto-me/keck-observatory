@@ -105,7 +105,7 @@ $postspage_id = get_option( 'page_for_posts' );
                             if ( $count != 0 ) {
                                 ?>
                                 <div class="blog_btn">
-                                    <a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo __( 'Read More', 'abcd' ) ?> <img src="<?php echo get_template_directory_uri() . '/assets/img/right_long_arrow.svg' ?>" alt="right long arrow"></a>
+                                    <a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo __( 'Read More', 'keck-observatory' ) ?> <img src="<?php echo get_template_directory_uri() . '/assets/img/right_long_arrow.svg' ?>" alt="right long arrow"></a>
                                 </div>
                                 <!-- /.blog_btn -->
                                 <?php

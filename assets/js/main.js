@@ -13,10 +13,10 @@
             $('.dropdown-menu').removeClass('active');
             $('.dropdown-menu').css('display', 'none');
         });
-        $('.header_menu li').not('.menu-item-has-children').hover(function(){
-            $('.dropdown-menu').removeClass('active');
-            $('.dropdown-menu').css('display', 'none');
-        });
+        // $('.header_menu li').not('.menu-item-has-children').hover(function(){
+        //     $('.dropdown-menu').removeClass('active');
+        //     $('.dropdown-menu').css('display', 'none');
+        // });
     }
 
 
@@ -41,4 +41,32 @@
         $(this).parents("li").removeClass("clicked");
         $(this).removeClass("search_close");
     });
+
+    $('.our-community').owlCarousel({
+        autoplay: false,
+        loop: true,
+        smartSpeed: 1500,
+        margin: 50,
+        nav: true,
+        dots: false,
+        navText: ["<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid'>","<img src='../wp-content/themes/keck-observatory/assets/img/right.png' class='img-fluid'>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            800: {
+                items: 1
+            },
+            992: {
+                items: 1
+            }
+        }
+    });
+
 })(window.jQuery);

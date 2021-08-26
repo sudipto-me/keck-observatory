@@ -71,7 +71,7 @@
                                         ?>
                                         <div class="social_share_options">
                                             <ul>
-                                                <li><a href="<?php echo $facebook_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/fb.svg'; ?>"> <?php echo __( ' Share ', 'abcd' ); ?></a></li>
+                                                <li><a href="<?php echo $facebook_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/fb.svg'; ?>"> <?php echo __( ' Share ', 'keck-observatory' ); ?></a></li>
                                                 <li><a href="<?php echo $linkedin_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/linkedin.svg'; ?>"></a></li>
                                                 <li><a href="<?php echo $twitter_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/twitter.svg'; ?>"></a></li>
                                                 <li><a href="<?php echo $pinterest_share_url; ?>" data-pin-shape="round" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/pinterest.svg'; ?>">
@@ -86,7 +86,7 @@
                                         <!-- /.blog_post_content -->
                                         <div class="social_share_options blog_social_bottom">
                                             <ul>
-                                                <li><a href="<?php echo $facebook_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/fb.svg'; ?>"> <?php echo __( ' Share ', 'abcd' ); ?></a></li>
+                                                <li><a href="<?php echo $facebook_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/fb.svg'; ?>"> <?php echo __( ' Share ', 'keck-observatory' ); ?></a></li>
                                                 <li><a href="<?php echo $linkedin_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/linkedin.svg'; ?>"></a></li>
                                                 <li><a href="<?php echo $twitter_share_url; ?>" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/twitter.svg'; ?>"></a></li>
                                                 <li><a href="<?php echo $pinterest_share_url; ?>" data-pin-shape="round" class="social_share_btn" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/img/twitter.svg'; ?>">

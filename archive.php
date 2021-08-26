@@ -45,7 +45,7 @@
                                                     
                                                 } else {
                                                     ?>
-                                                    <li><?php echo __( 'No Category Found', 'abcd' ); ?></li>
+                                                    <li><?php echo __( 'No Category Found', 'keck-observatory' ); ?></li>
                                                     <?php
                                                 }
                                                 echo '</ul>';
@@ -69,7 +69,7 @@
                                             <!--                                            <p>--><?php //echo wp_trim_words( $post->post_content, 25, '...' ); ?><!--</p>-->
                                             <p><?php echo $excerpt . '...'; ?></p>
                                             <div class="blog_btn">
-                                                <a href="<?php the_permalink(); ?>"><?php echo __( 'Read More', 'abcd' ) ?> <img src="<?php echo get_template_directory_uri() . '/assets/img/right_long_arrow.svg' ?>" alt="right long arrow"></a>
+                                                <a href="<?php the_permalink(); ?>"><?php echo __( 'Read More', 'keck-observatory' ) ?> <img src="<?php echo get_template_directory_uri() . '/assets/img/right_long_arrow.svg' ?>" alt="right long arrow"></a>
                                             </div>
                                             <!-- /.blog_btn -->
 
@@ -85,8 +85,8 @@
                         <?php
                         echo '<div class="blog-pagination text-center">';
                         the_posts_pagination( array(
-                            'prev_text'          => __( ' << Previous ', 'abcd' ),
-                            'next_text'          => __( 'Next >>', 'abcd' ),
+                            'prev_text'          => __( ' << Previous ', 'keck-observatory' ),
+                            'next_text'          => __( 'Next >>', 'keck-observatory' ),
                             'before_page_number' => '',
                             'screen_reader_text' => ' '
                         ) );
