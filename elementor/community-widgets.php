@@ -146,7 +146,7 @@ class Community_Slider extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		if ( $settings['slides'] ) {
-			echo '<div class="our-community owl-carousel">';
+			echo '<div class="our-community">';
 			foreach ( $settings['slides'] as $slide ) {
 				?>
                 <div class="slide_item">

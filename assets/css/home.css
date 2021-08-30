@@ -4,12 +4,17 @@
 .home .main_header {
     background-color: transparent;
 }
-.home .home-banner .elementor-column-gap-default>.elementor-column>.elementor-element-populated{
+.home .shrink-header .main_header {
+    background-color: #000000;
+}
+.home .home-banner .elementor-column-gap-default > .elementor-column > .elementor-element-populated {
     padding: 0;
 }
+
 .home .home-banner {
     z-index: 1;
 }
+
 .home .single-slide .elementor-button {
     background: #000000 !important;
     text-transform: uppercase;
@@ -28,21 +33,26 @@
     outline: none !important;
     border-radius: 0 !important;
 }
-.home .single-slide .elementor-button:hover{
+
+.home .single-slide .elementor-button:hover {
     background: #F2F2F2 !important;
     color: #000000 !important;
 }
+
 /* News Section*/
-.news-section .elementor-widget:not(:last-child), .telescope-section .elementor-widget:not(:last-child),.universe-section .elementor-widget:not(:last-child), .stewardship-section .elementor-widget:not(:last-child){
+.news-section .elementor-widget:not(:last-child), .telescope-section .elementor-widget:not(:last-child), .universe-section .elementor-widget:not(:last-child), .stewardship-section .elementor-widget:not(:last-child) {
     margin-bottom: 0 !important;
 }
+
 .recent_post_img {
     position: relative;
 }
+
 .recent_post_img img {
     width: 100%;
     overflow: hidden;
 }
+
 .recent_post_img .post-link {
     position: absolute;
     top: 0;
@@ -53,6 +63,7 @@
     width: 100%;
     height: 100%;
 }
+
 .recent_post_img .arrow {
     position: absolute;
     bottom: 0;
@@ -64,7 +75,8 @@
     box-shadow: none;
     outline: none;
 }
-.recent_post_img  .category-link {
+
+.recent_post_img .category-link {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -80,9 +92,9 @@
     padding-right: 10px;
 }
 
-.recent_post_img  .category-link:hover,
-.recent_post_img  .category-link:active,
-.recent_post_img  .category-link:focus {
+.recent_post_img .category-link:hover,
+.recent_post_img .category-link:active,
+.recent_post_img .category-link:focus {
     background: #000000;
     color: #ffffff;
 
@@ -98,34 +110,43 @@
     color: #919295;
     margin-bottom: 10px;
 }
+
 .recent_post_content a {
     max-width: 375px;
 }
+
 .recent_post_content a .title {
-    font-family: 'Rubik',sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 22px;
     line-height: 1.68em;
     font-weight: 400;
     color: #1a1a1a;
     word-break: break-word;
 }
-.site_cta.black_btn a
-{
+
+.site_cta.black_btn a {
     background: #000000 !important;
     color: #ffffff !important;
     padding: 27px 28px;
 }
+
+.telescope-section .section_title h2 {
+    margin-bottom: 10px !important;
+}
+
 .telescope-section .site_cta a {
     padding: 20px 45px;
 }
-.universe-section .site_cta a{
+
+.universe-section .site_cta a {
     padding: 24px 35px;
 }
 
 .stewardship-section .site_cta a {
     padding: 22px 54px;
 }
-.stewardship-section>.elementor-container {
+
+.stewardship-section > .elementor-container {
     border-top: 1px solid #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
 }
@@ -135,10 +156,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .slide_item_img {
     width: 100%;
     position: relative;
 }
+
 .slide_item_url {
     position: absolute;
     top: 0;
@@ -148,6 +171,7 @@
     width: 100%;
     height: 100%;
 }
+
 .slide_item_content {
     margin-top: 90px;
     text-align: center;
@@ -155,18 +179,33 @@
     margin-left: auto;
     margin-right: auto;
 }
-.our-community .owl-prev {
-    position: absolute;
-    top: 36%;
-    left: 0;
+.community-section .elementor-widget:not(:last-child) {
+    margin-bottom: 0 !important;
 }
 
-.our-community .owl-next {
+.our-community {
+    max-width: 750px;
+    margin: 0 auto;
+}
+.slick-arrow {
     position: absolute;
-    top: 36%;
-    right: 0;
+    top: 30%;
+    left: -25%;
 }
 
-.our-community .owl-prev:focus,.our-community .owl-next:focus {
-    outline: none;
+.slick-arrow.right {
+    left: 119%;
+    transform: rotate(180deg);
+}
+.slick-dots li {
+    background: #f2f2f2;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+}
+.slick-dots li.slick-active {
+    background: #000000;
+}
+.slick-dots button {
+    display: none;
 }

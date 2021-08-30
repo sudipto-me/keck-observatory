@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-    <div class="default-page-without-sidebar "></div>
     <section class="default-page-without-sidebar area">
         <div class="container">
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
