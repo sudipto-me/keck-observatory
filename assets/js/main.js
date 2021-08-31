@@ -50,7 +50,7 @@
             autoplay: false,
             slidesToShow: 1,
             slidesToScroll: 1,
-            loop: true,
+            infinite: true,
             arrows: true,
             dots: false,
             prevArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid'>",
@@ -118,6 +118,35 @@
         $.post(carousel_object.ajax_url, ajax_data, function (response) {
             $('body').find('.post_section').html( response );
         });
+    });
+
+    $('.testimonials').slick({
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        prevArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid'>",
+        nextArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid right'>",
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    dots: true
+                }
+            }
+        ]
     });
 
 

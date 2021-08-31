@@ -76,8 +76,10 @@ add_action( 'elementor/elements/categories_registered', 'register_custom_widget_
 //register custom widget in elementor
 function register_custom_widgets( $elementor ) {
 	require_once get_stylesheet_directory() . '/elementor/community-widgets.php';
+	require_once get_stylesheet_directory() . '/elementor/testimonial-widgets.php';
 
 	$elementor->register_widget_type( new \KeckObservatory\Elementor\Community_Slider );
+	$elementor->register_widget_type( new \KeckObservatory\Elementor\Testimonial_Slider );
 }
 add_action( 'elementor/widgets/widgets_registered', 'register_custom_widgets' );
 

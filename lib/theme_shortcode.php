@@ -426,3 +426,248 @@ function featured_video_with_carousel_shortcode_callback( $attrs, $content = nul
     return ob_get_clean();
 }
 add_shortcode('featured_video_with_carousel','featured_video_with_carousel_shortcode_callback');
+
+
+function upcoming_event_listing_shortcode_callback( $attrs, $content = null ) {
+	ob_start();
+		$posts_args     = array(
+			'post_type'      => 'post',
+			'posts_per_page' => -1,
+			'post_status'    => 'publish',
+			'orderby'        => 'date',
+			'order'          => 'ASC',
+			'tax_query' => array(
+			         array(
+			                'taxonomy' => 'category',
+			                'field' => 'slug',
+			                'terms' => 'event'
+			        )
+			),
+			'meta_query' => array(
+			        'relation' => 'AND',
+			        array(
+                        'key' => 'event_starts',
+                        'value' => 0,
+                        'compare' => '>'
+		            ),
+                    array(
+                        'key' => 'event_ends',
+                        'value' => date( 'Y-m-d H:i:s' ),
+                        'compare' => '>'
+                    )
+			    )
+		);
+
+		$post_query     = new WP_Query( $posts_args );
+		if ( $post_query->have_posts() ) {
+			echo '<div class="post-grid-container upcoming-events-grid-container">';
+			while ( $post_query->have_posts() ) {
+				$post_query->the_post();
+				?>
+                <article id="post-<?php the_ID();?>" <?php post_class(); ?>>
+                    <div class="blog-regular-post event-post">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="post-img">
+                                    <?php
+                                        if ( has_post_thumbnail( get_the_ID() ) ) {
+                                            $thumbImage = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+                                        } else {
+                                            $thumbImage = get_template_directory_uri() . '/assets/img/featured-post.jpg';
+                                        }
+                                        $image_alt        = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
+                                        $image_alt        = ( empty( $image_alt ) ) ? get_the_title( get_the_ID() ) : $image_alt;
+                                        $attachment_title = get_the_title( get_post_thumbnail_id( get_the_ID() ) );
+                                        ?>
+                                          <a href="<?php echo esc_url( get_the_permalink( get_the_ID()));?>"><img src="<?php echo esc_url( $thumbImage);?>" alt="<?php echo $image_alt?>" class="img-fluid"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="post-content">
+                                    <div class="post-cat">
+                                        <?php
+                                            $categories = get_the_terms( get_the_ID(),'category');
+                                            if ( is_array( $categories ) && !empty( $categories ) ) {
+                                                foreach ( $categories as $category ) { ?>
+                                                    <a href="<?php echo get_term_link( $category )?>" class="cat-link"><?php echo $category->name;?></a>
+                                            <?php }  }  ?>
+                                    </div>
+                                    <?php
+                                        $event_starts =  get_field('event_starts', get_the_ID() );
+                                        $event_ends =  get_field('event_ends', get_the_ID() );
+
+                                        $start_date = new DateTime($event_starts);
+                                        $start_date = date_format( $start_date, 'Ymd');
+                                        $end_date = new DateTime($event_ends);
+                                        $end_date = date_format( $end_date, 'Ymd');
+                                    ?>
+                                    <?php
+                                        if( $start_date == $end_date ){
+                                    ?>
+                                    <p class="date"><?php echo date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - '. date('g:i a',strtotime( $event_ends ) )?></p>
+                                    <?php } else {?>
+                                    <p class="date"><?php echo date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - '. date('F j, Y g:i a',strtotime( $event_ends ) )?></p>
+                                    <?php } ?>
+                                    <div class="post-desc">
+                                        <a href="<?php echo esc_url( get_the_permalink( get_the_ID() ));?>"><h3 class="title"><?php echo get_the_title();?></h3></a>
+                                        <p class="description"><?php echo wp_trim_words( get_the_content(),'20','...')?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <?php
+			}
+			wp_reset_postdata();
+			echo '</div>';
+		}
+	?>
+
+	<?php
+	return ob_get_clean();
+}
+
+add_shortcode( 'upcoming_event_listing', 'upcoming_event_listing_shortcode_callback' );
+
+
+function past_event_listing_shortcode_callback( $attrs, $content = null ) {
+	ob_start();
+	$attrs = shortcode_atts( array(
+		'posts_per_page' => '',
+	), $attrs );
+
+		if ( get_query_var( 'paged' ) ) {
+			$paged = get_query_var( 'paged' );
+		} elseif ( get_query_var( 'page' ) ) {
+			$paged = get_query_var( 'page' );
+		} else {
+			$paged = 1;
+		}
+		$posts_per_page = ! empty( $attrs['posts_per_page'] ) ? $attrs['posts_per_page'] : get_option( 'posts_per_page' );
+		$posts_args     = array(
+			'post_type'      => 'post',
+			'posts_per_page' => $posts_per_page,
+			'post_status'    => 'publish',
+			'orderby'        => 'date',
+			'order'          => 'ASC',
+			'paged'          => $paged,
+			'tax_query' => array(
+			        array(
+			               'taxonomy' => 'category',
+					        'field'    => 'slug',
+					        'terms'    => 'event'
+			        )
+			),
+			'meta_query' => array(
+		'relation' => 'AND',
+		array(
+			'key' => 'event_starts',
+			'value' => 0,
+			'compare' => '>'
+		),
+		array(
+			'key' => 'event_ends',
+			'value' => 0,
+			'compare' => '>'
+		),
+		array(
+			'key' => 'event_ends',
+			'value' => date( 'Y-m-d H:i:s' ),
+			'compare' => '<'
+		    )
+	    )
+		);
+
+		$post_query     = new WP_Query( $posts_args );
+		if ( $post_query->have_posts() ) {
+
+			echo '<div class="post-grid-container past-events-grid-container">';
+			while ( $post_query->have_posts() ) {
+				$post_query->the_post();
+				?>
+                <article id="post-<?php the_ID();?>" <?php post_class(); ?>>
+                    <div class="blog-regular-post event-post">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="post-img">
+                                    <?php
+                                        if ( has_post_thumbnail( get_the_ID() ) ) {
+                                            $thumbImage = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+                                        } else {
+                                            $thumbImage = get_template_directory_uri() . '/assets/img/featured-post.jpg';
+                                        }
+                                        $image_alt        = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
+                                        $image_alt        = ( empty( $image_alt ) ) ? get_the_title( get_the_ID() ) : $image_alt;
+                                        $attachment_title = get_the_title( get_post_thumbnail_id( get_the_ID() ) );
+                                        ?>
+                                          <a href="<?php echo esc_url( get_the_permalink( get_the_ID()));?>"><img src="<?php echo esc_url( $thumbImage);?>" alt="<?php echo $image_alt?>" class="img-fluid"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="post-content">
+                                    <div class="post-cat">
+                                        <?php
+                                            $categories = get_the_terms( get_the_ID(),'category');
+                                            if ( is_array( $categories ) && !empty( $categories ) ) {
+                                                foreach ( $categories as $category ) { ?>
+                                                    <a href="<?php echo get_term_link( $category )?>" class="cat-link"><?php echo $category->name;?></a>
+                                            <?php }  }  ?>
+                                    </div>
+                                     <?php
+                                        $event_starts =  get_field('event_starts', get_the_ID() );
+                                        $event_ends =  get_field('event_ends', get_the_ID() );
+
+                                        $start_date = new DateTime($event_starts);
+                                        $start_date = date_format( $start_date, 'Ymd');
+                                        $end_date = new DateTime($event_ends);
+                                        $end_date = date_format( $end_date, 'Ymd');
+                                    ?>
+                                    <?php
+                                        if( $start_date == $end_date ){
+                                    ?>
+                                    <p class="date"><?php echo date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - '. date('g:i a',strtotime( $event_ends ) );?></p>
+                                    <?php } else {?>
+                                    <p class="date"><?php echo date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - '. date('F j, Y g:i a',strtotime( $event_ends ) );?></p>
+                                    <?php } ?>
+                                    <div class="post-desc">
+                                        <a href="<?php echo esc_url( get_the_permalink( get_the_ID() ));?>"><h3 class="title"><?php echo get_the_title();?></h3></a>
+                                        <p class="description"><?php echo wp_trim_words( get_the_content(),'20','...')?></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <?php
+			}
+			echo '</div>';
+		}
+		wp_reset_postdata();
+		$big          = 9999999;
+		$current_page = max( 1, get_query_var( 'paged' ) );
+		echo '<div class="blog-pagination text-center">';
+		echo paginate_links(
+			array(
+				'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'    => 'page/%#%/',
+				'current'   => $current_page,
+				'total'     => $post_query->max_num_pages,
+				'prev_text' => '« Prev',
+				'next_text' => 'Next »'
+			)
+		);
+		echo "</div>";
+	?>
+
+	<?php
+	return ob_get_clean();
+}
+
+add_shortcode( 'past_event_listing', 'past_event_listing_shortcode_callback' );
+
+
+
+
+

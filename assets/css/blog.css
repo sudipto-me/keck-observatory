@@ -805,6 +805,9 @@ h4.comment_user_name {
 .paged .featured_post_wrapper .post_section {
     display: none;
 }
+.paged .featured_video_wrapper .post_section {
+    display: flex;
+}
 /*.featured_post_wrapper .post_img {*/
 /*    width: 615px;*/
 /*}*/
@@ -952,6 +955,18 @@ h4.comment_user_name {
 }
 .slick-dots li button {
     display: none;
+}
+.upcoming-events-grid-container {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dddddd;
+    padding-top: 40px;
+}
+.upcoming-events-grid-container article:last-child {
+    margin-bottom: 0;
+}
+.blog_featured_post p.date {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 @media (min-width: 1600px) {
     .container, .featured-section .elementor-container {
