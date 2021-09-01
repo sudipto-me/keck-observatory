@@ -116,7 +116,7 @@
             carousel_id: current_post_id,
         };
         $.post(carousel_object.ajax_url, ajax_data, function (response) {
-            $('body').find('.post_section').html( response );
+            $('body').find('.post_section').html(response);
         });
     });
 
@@ -147,6 +147,24 @@
                 }
             }
         ]
+    });
+
+
+    // $('#donation-modal').modal();
+
+    // scroll to footer
+    $(window).scroll(function() {
+        let footer_top = $('.site_footer').offset().top,
+            footer_height = $('.site_footer').outerHeight(),
+            window_height = $(window).height(),
+            window_scroll = $(this).scrollTop();
+        if (window_scroll > (footer_height+footer_top-window_height)){
+            $('#donation-modal').modal({
+                fadeDuration: 250
+            });
+
+
+        }
     });
 
 

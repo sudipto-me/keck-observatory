@@ -1,7 +1,7 @@
 <?php
 $theme_options   = get_option( 'theme-options' );
 $logo            = ( ! empty( $theme_options['theme-header-logo']['url'] ) ) ? $theme_options['theme-header-logo']['url'] : get_template_directory_uri() . '/assets/img/header-logo.png';
-$logo_alt        = ( ! empty( $theme_options['theme-header-logo']['alt'] ) ) ? $theme_options['theme-header-logo']['alt'] : esc_html__( 'Site Logo', 'abcd' );
+$logo_alt        = ( ! empty( $theme_options['theme-header-logo']['alt'] ) ) ? $theme_options['theme-header-logo']['alt'] : esc_html__( 'Site Logo', 'keck-observatory' );
 $header_btn_url  = ( ! empty( $theme_options['theme-cta']['url'] ) ) ? $theme_options['theme-cta']['url'] : '#';
 $header_btn_text = ( ! empty( $theme_options['theme-cta']['text'] ) ) ? $theme_options['theme-cta']['text'] : __( 'Donate', 'keck-observatory' );
 $header_script   = ( ! empty( $theme_options['theme-header-script'] ) ) ? $theme_options['theme-header-script'] : '';

@@ -101,4 +101,36 @@ if ( class_exists( 'CSF' ) ) {
 			),
 		)
 	) );
+
+	// Create modal section
+	CSF::createSection( $prefix, array(
+		'title'  => 'Modal',
+		'fields' => array(
+			array(
+				'id'    => 'modal-image',
+				'type'  => 'media',
+				'title' => __( 'Modal Image', 'keck-observatory' ),
+			),
+			array(
+				'id'    => 'modal-header',
+				'type'  => 'text',
+				'title' => __( 'Modal Heading', 'keck-observatory' ),
+			),
+			array(
+				'id'    => 'modal-description',
+				'type'  => 'wp_editor',
+				'title' => __( 'Modal Content', 'keck-observatory' ),
+			),
+			array(
+				'id'    => 'modal-button',
+				'type'  => 'link',
+				'title' => __( 'Modal Button', 'keck-observatory' ),
+			),
+			array(
+				'id'    => 'modal-footer',
+				'type'  => 'wp_editor',
+				'title' => __( 'Modal Footer', 'keck-observatory' ),
+			),
+		)
+	) );
 }
