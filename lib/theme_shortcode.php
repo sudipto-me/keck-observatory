@@ -128,14 +128,18 @@ function popular_posts_shortcode_callback( $attrs, $content = null ) {
 			'post_type'      => 'post',
 			'post_status'    => 'status',
 			'posts_per_page' => - 1,
+			'meta_query' => array(
+			        array(
+			              'key' => 'show_in_sidebar',
+			              'value' => 'yes',
+			              'compare' => '='
+			        )
+			)
 		)
 	);
 	if ( $posts ) {
 		echo '<div class="popular_post_wrapper">';
 		foreach ( $posts as $post ) {
-			$show_in_sidebar = get_field( 'show_in_sidebar', $post->ID );
-			error_log( print_r( $show_in_sidebar, true ) );
-			if ( 'yes' === $show_in_sidebar ) {
 				echo '<div class="popular_post">';
 				if ( has_post_thumbnail() ) {
 					$thumbImage = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
@@ -153,7 +157,6 @@ function popular_posts_shortcode_callback( $attrs, $content = null ) {
 				echo '<a href="' . get_the_permalink( $post->ID ) . '"><h2 class="title">' . $post->post_title . '</h2></a>';
 				echo '</div>';
 				echo '</div>';
-			}
 		}
 		echo '</div>';
 	}

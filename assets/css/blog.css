@@ -968,6 +968,10 @@ h4.comment_user_name {
     font-size: 18px;
     margin-bottom: 20px;
 }
+.page_title {
+    text-align: center;
+    margin-bottom: 30px;
+}
 @media (min-width: 1600px) {
     .container, .featured-section .elementor-container {
         max-width: 1530px !important;

@@ -236,6 +236,9 @@
     .testimonials .slick-dots {
         bottom: 23px;
     }
+    .archive .blog_featured_section {
+        padding-left: 0;
+    }
 }
 
 /* ======================
@@ -468,7 +471,6 @@
     }
     .testimonial_slide_item .slide_item_content {
         margin-top: 30px;
-
     }
     .testimonials .slick-dots {
         left: 35%;

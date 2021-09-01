@@ -1,112 +1,108 @@
 <?php get_header(); ?>
     <section class="inner_page_wrapper section_padding area">
-        <?php
-        if ( have_posts() ) : ?>
         <div class="container">
-            <?php the_archive_title( '<h2 class="page_title">', '</h2>' ); ?>
-            <div class="blog_page_wrapper">
-                <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="row">
-                            <?php
-                            while ( have_posts() ) : the_post();
-                                $image_alt        = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
-                                $image_alt        = ( empty( $image_alt ) ) ? get_the_title( $post->ID ) : $image_alt;
-                                $attachment_title = get_the_title( get_post_thumbnail_id( $post->ID ) );
-                                ?>
-                                <div class="col-md-6">
-                                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                        <div class="blog_featured_post blog_regular_post">
-                                            <?php
-                                            if ( has_post_thumbnail() ) {
-                                                $thumbImage = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-                                            } else {
-                                                $thumbImage = get_template_directory_uri() . '/assets/img/post_thumbnail.svg';
-                                            }
-                                            ?>
-                                            <div class="featured_post_img">
-                                                <a href="<?php the_permalink(); ?>">
-                                                    <img src="<?php echo $thumbImage; ?>" alt="<?php echo $image_alt; ?>" title="<?php echo $attachment_title; ?>">
-                                                </a>
+			<?php the_archive_title( '<h2 class="page_title">', '</h2>' ); ?>
+            <div class="row blog_page_wrapper">
+                <div class="col-lg-9  col-md-8 col-sm-12 blog_featured_section">
+					<?php
+					if ( have_posts() ) :
+						?>
+                        <div class="post-grid-container">
+							<?php
+							while ( have_posts() ):
+								the_post();
+							?>
+                                <article id="post-<?php the_ID();?>" <?php post_class(); ?>>
+                                    <div class="blog-regular-post">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="post-img">
+													<?php
+													if ( has_post_thumbnail( get_the_ID() ) ) {
+														$thumbImage = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+													} else {
+														$thumbImage = get_template_directory_uri() . '/assets/img/featured-post.jpg';
+													}
+													$image_alt        = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
+													$image_alt        = ( empty( $image_alt ) ) ? get_the_title( get_the_ID() ) : $image_alt;
+													$attachment_title = get_the_title( get_post_thumbnail_id( get_the_ID() ) );
+													?>
+                                                    <a href="<?php echo esc_url( get_the_permalink( get_the_ID()));?>"><img src="<?php echo esc_url( $thumbImage);?>" alt="<?php echo $image_alt?>" class="img-fluid"></a>
+                                                </div>
                                             </div>
-                                            <!-- /.featured_post_img -->
-                                            <div class="post_options">
-                                                <?php
-                                                $categories = get_the_terms( $post->ID, 'category' );
-                                                echo '<ul class="post_cat">';
-                                                if ( is_array( $categories ) && count( $categories ) > 0 ) {
-                                                    //foreach ( $categories as $single_cat ) {
-                                                    ?>
-                                                    <li>
-                                                        <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a>
-                                                    </li>
-                                                    <?php
-                                                    // }
-                                                    
-                                                } else {
-                                                    ?>
-                                                    <li><?php echo __( 'No Category Found', 'keck-observatory' ); ?></li>
-                                                    <?php
-                                                }
-                                                echo '</ul>';
-                                                echo '<ul class="post_time">';
-                                                ?>
-                                                <li>
-                                                    <p><?php echo date( 'j F Y', strtotime( $post->post_date ) ); ?></p>
-                                                </li>
-                                                <?php
-                                                echo '</ul>';
-                                                ?>
-                                            </div>
-                                            <!-- /.post_options -->
-                                            <h2 class="blog_post_title">
-                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                            </h2>
-                                            <?php
-                                            $excerpt = get_the_excerpt( $post->ID );
-                                            $excerpt = substr( $excerpt, 0, 150 );
-                                            ?>
-                                            <!--                                            <p>--><?php //echo wp_trim_words( $post->post_content, 25, '...' ); ?><!--</p>-->
-                                            <p><?php echo $excerpt . '...'; ?></p>
-                                            <div class="blog_btn">
-                                                <a href="<?php the_permalink(); ?>"><?php echo __( 'Read More', 'keck-observatory' ) ?> <img src="<?php echo get_template_directory_uri() . '/assets/img/right_long_arrow.svg' ?>" alt="right long arrow"></a>
-                                            </div>
-                                            <!-- /.blog_btn -->
+                                            <div class="col-md-8 col-sm-12">
+                                                <div class="post-content">
+                                                    <div class="post-cat">
+														<?php
+														$categories = get_the_terms( get_the_ID(),'category');
+														if ( is_array( $categories ) && !empty( $categories ) ) {
+															foreach ( $categories as $category ) { ?>
+                                                                <a href="<?php echo get_term_link( $category )?>" class="cat-link"><?php echo $category->name;?></a>
+															<?php }  }  ?>
+                                                    </div>
+	                                                <?php
+	                                                if ( in_category( 'event', get_the_ID() ) ) {
+		                                                ?>
+		                                                <?php
+		                                                $event_starts = get_field( 'event_starts', get_the_ID() );
+		                                                $event_ends   = get_field( 'event_ends', get_the_ID() );
 
+		                                                $start_date = new DateTime( $event_starts );
+		                                                $start_date = date_format( $start_date, 'Ymd' );
+		                                                $end_date   = new DateTime( $event_ends );
+		                                                $end_date   = date_format( $end_date, 'Ymd' );
+		                                                ?>
+		                                                <?php
+		                                                if ( $start_date == $end_date ) {
+			                                                ?>
+                                                            <p class="date"><?php echo __( 'Event Date : ', 'keck-observatory' ) . date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - ' . date( 'g:i a', strtotime( $event_ends ) ) ?></p>
+		                                                <?php } else { ?>
+                                                            <p class="date"><?php echo __( 'Event Date : ', 'keck-observatory' ) . date( 'F j, Y g:i a', strtotime( $event_starts ) ) . ' - ' . date( 'F j, Y g:i a', strtotime( $event_ends ) ) ?></p>
+		                                                <?php }
+	                                                } else { ?>
+                                                        <p class="date"><?php echo date( 'F j, Y', strtotime( get_the_date( 'F j, Y' ) ) ); ?></p>
+	                                                <?php } ?>
+                                                    <div class="post-desc">
+                                                        <a href="<?php echo esc_url( get_the_permalink( get_the_ID() ));?>"><h3 class="title"><?php echo get_the_title();?></h3></a>
+                                                        <p class="description"><?php echo wp_trim_words( get_the_content(),'20','...')?></p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!-- /.blog_regular_post -->
-                                    </article>
-                                </div>
-                            <?php endwhile;
-                            wp_reset_postdata();
-                            endif;
-                            ?>
+                                    </div>
+                                </article>
+                            <?php
+							endwhile;
+							wp_reset_postdata();
+							?>
                         </div>
-                        <?php
-                        echo '<div class="blog-pagination text-center">';
-                        the_posts_pagination( array(
-                            'prev_text'          => __( ' << Previous ', 'keck-observatory' ),
-                            'next_text'          => __( 'Next >>', 'keck-observatory' ),
-                            'before_page_number' => '',
-                            'screen_reader_text' => ' '
-                        ) );
-                        echo '</div>';
-                        ?>
-                    </div>
+					<?php
+					endif;
+					?>
+					<?php
+					echo '<div class="blog-pagination text-center">';
+					the_posts_pagination( array(
+						'prev_text'          => __( ' << Previous ', 'keck-observatory' ),
+						'next_text'          => __( 'Next >>', 'keck-observatory' ),
+						'before_page_number' => '',
+						'screen_reader_text' => ' '
+					) );
+					echo '</div>';
+					?>
+                </div>
                 <!-- End of col -->
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-3 col-md-4 col-sm-12 blog_sidebar_section">
                     <div class="blog_sidebar_wrapper">
-                        <?php
-                        if ( is_active_sidebar( 'blog-sidebar' ) ) {
-                            dynamic_sidebar( 'blog-sidebar' );
-                        }
-                        ?>
+						<?php
+						if ( is_active_sidebar( 'blog-sidebar' ) ) {
+							dynamic_sidebar( 'blog-sidebar' );
+						}
+						?>
                     </div>
                 </div>
                 <!-- End of col -->
             </div>
-            <!-- End of row -->
-        </div>
         </div>
         <!-- End of container -->
     </section>

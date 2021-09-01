@@ -21,7 +21,7 @@
             },
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "",
+            "default_value": "no",
             "layout": "vertical",
             "return_format": "value",
             "save_other_choice": 0
@@ -44,5 +44,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1630093528
+    "modified": 1630439037
 }
