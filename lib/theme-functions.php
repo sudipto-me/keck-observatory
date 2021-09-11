@@ -40,10 +40,8 @@ add_filter( 'wp_nav_menu_items', 'keck_add_menu_item', 10, 2 );
  * @return mixed
  */
 function keck_add_menu_item( $items, $args ) {
-	$theme_options   = get_option( 'theme-options' );
-	$header_btn_url  = ( ! empty( $theme_options['theme-cta']['url'] ) ) ? $theme_options['theme-cta']['url'] : '#';
-	$header_btn_text = ( ! empty( $theme_options['theme-cta']['text'] ) ) ? $theme_options['theme-cta']['text'] : __( 'Donate', 'keck-observatory' );
-	$items           .= '<li class="site_cta"><a href="' . $header_btn_url . '">' . $header_btn_text . '</a>';
+	$header_btn_url  = ( ! empty( get_theme_mod( 'donate-page' ) ) ) ? get_theme_mod( 'donate-page' ) : '#';
+	$items           .= '<li class="site_cta"><a href="' . $header_btn_url . '">' . esc_html__( 'Donate', 'keck-observatory' ) . '</a>';
 
 	return $items;
 }

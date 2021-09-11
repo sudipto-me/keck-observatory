@@ -6,7 +6,7 @@ require_once get_theme_file_path( '/lib/csf/codestar-framework/codestar-framewor
 /**
  * Admin Options
  */
-require_once get_theme_file_path( '/lib/csf/admin-options.php' );
+// require_once get_theme_file_path( '/lib/csf/admin-options.php' );
 
 /**
  * Bootstrap Nav Walker for this theme.
@@ -27,6 +27,7 @@ require_once get_theme_file_path( '/classes/class-twentytwenty-walker-comment.ph
 require_once get_theme_file_path( '/lib/script-functions.php' );
 require_once get_theme_file_path( '/lib/widget-functions.php' );
 require_once get_theme_file_path( '/lib/theme-functions.php' );
+require_once get_theme_file_path( '/lib/theme_customizer.php' );
 
 // Define constants
 define( 'KECK_OBSERVATORY_THEME_VERSION', '1.0.0' );
