@@ -828,15 +828,7 @@ ul.footer_social li a:focus {
     flex: 1;
 }
 
-h2.modal_title {
-    text-align: center;
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 1.32em;
-}
-
 .desc {
-    margin-top: 20px;
     text-align: center;
 }
 
@@ -864,7 +856,13 @@ p.modal-footer {
     color: #6d6e71;
     padding-top: 20px;
 }
-
+.dialog-widget {
+    z-index: 999999 !important;
+}
+.elementor-popup-modal .dialog-message {
+    width: 1240px !important;
+    overflow: hidden !important;
+}
 
 
 

@@ -149,23 +149,4 @@
         ]
     });
 
-
-    // $('#donation-modal').modal();
-
-    // scroll to footer
-    $(window).scroll(function() {
-        let footer_top = $('.site_footer').offset().top,
-            footer_height = $('.site_footer').outerHeight(),
-            window_height = $(window).height(),
-            window_scroll = $(this).scrollTop();
-        if (window_scroll > (footer_height+footer_top-window_height)){
-            $('#donation-modal').modal({
-                fadeDuration: 250
-            });
-
-
-        }
-    });
-
-
 })(window.jQuery);

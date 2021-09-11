@@ -78,41 +78,6 @@ function register_custom_widgets( $elementor ) {
 add_action( 'elementor/widgets/widgets_registered', 'register_custom_widgets' );
 
 
-// modal content
-function keck_observatory_modal_contents() {
-	if ( is_home() || is_front_page() ) {
-		?>
-        <div class="modal donation_modal" id="donation-modal">
-			<?php
-			$theme_options  = get_option( 'theme-options' );
-			$img            = ( ! empty( $theme_options['modal-image']['url'] ) ) ? $theme_options['modal-image']['url'] : get_template_directory_uri() . '/assets/img/modal-img.png';
-			$img_alt        = ( ! empty( $theme_options['modal-image']['alt'] ) ) ? $theme_options['modal-image']['alt'] : esc_html__( 'Modal Img', 'keck-observatory' );
-			$heading        = ! empty( $theme_options['modal-header'] ) ? $theme_options['modal-header'] : __( 'Send A Donation', '' );
-			$modal_btn_url  = ( ! empty( $theme_options['modal-button']['url'] ) ) ? $theme_options['modal-button']['url'] : '#';
-			$modal_btn_text = ( ! empty( $theme_options['modal-button']['text'] ) ) ? $theme_options['modal-button']['text'] : __( 'Donate', 'keck-observatory' );
-			?>
-            <div class="footer-container">
-                <div class="modal_content">
-                    <div class="modal-img">
-                        <img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_html( $img_alt ) ?>" class="img-fluid">
-                    </div>
-                    <div class="modal-blocks">
-                        <h2 class="modal_title"><?php echo esc_html( $heading ); ?></h2>
-                        <div class="desc">
-                            <p><?php echo $theme_options['modal-description']; ?></p>
-                            <a href="<?php echo esc_url( $modal_btn_url ); ?>" class="site_cta modal-btn"> <?php echo esc_html( $modal_btn_text ); ?></a>
-                        </div>
-                        <p class="modal-footer"><?php echo esc_html( $theme_options['modal-footer'] ); ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<?php
-	}
-}
-
-add_action( 'wp_footer', 'keck_observatory_modal_contents' );
-
 
 
 
