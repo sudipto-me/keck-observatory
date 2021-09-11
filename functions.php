@@ -20,7 +20,6 @@ require_once get_theme_file_path( '/lib/theme_shortcode.php' );
  * Theme metabox
  */
 require_once get_theme_file_path( '/lib/theme_metabox.php' );
-require_once get_theme_file_path( '/lib/theme_cpt.php' );
 
 require_once get_theme_file_path( '/classes/class-twentytwenty-walker-comment.php' );
 
