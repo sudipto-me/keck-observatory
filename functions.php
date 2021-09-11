@@ -1,14 +1,5 @@
 <?php
 /**
- * Codestar Framework
- */
-require_once get_theme_file_path( '/lib/csf/codestar-framework/codestar-framework.php' );
-/**
- * Admin Options
- */
-// require_once get_theme_file_path( '/lib/csf/admin-options.php' );
-
-/**
  * Bootstrap Nav Walker for this theme.
  */
 require_once get_theme_file_path( '/lib/wp_bootstrap_navwalker.php' );
@@ -21,9 +12,6 @@ require_once get_theme_file_path( '/lib/theme_shortcode.php' );
  */
 require_once get_theme_file_path( '/lib/theme_metabox.php' );
 
-require_once get_theme_file_path( '/classes/class-twentytwenty-walker-comment.php' );
-
-//edd custom files
 require_once get_theme_file_path( '/lib/script-functions.php' );
 require_once get_theme_file_path( '/lib/widget-functions.php' );
 require_once get_theme_file_path( '/lib/theme-functions.php' );
@@ -31,11 +19,6 @@ require_once get_theme_file_path( '/lib/theme_customizer.php' );
 
 // Define constants
 define( 'KECK_OBSERVATORY_THEME_VERSION', '1.0.0' );
-
-/**
- * Custom Login Functions
- */
-//require_once get_theme_file_path( '/lib/login_functions.php' );
 
 
 /* -----------------------------------------------------------------------------

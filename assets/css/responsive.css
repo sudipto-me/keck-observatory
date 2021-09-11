@@ -84,7 +84,7 @@
         font-size: 34px !important;
     }
 
-    .telescope-section .section_description {
+    .telescope-section .section_description{
         font-size: 18px !important;
     }
 
@@ -431,10 +431,18 @@
     .site_cta.modal-btn {
         padding: 10px 20px;
     }
-    p.modal-footer {
+    .footer p{
         font-size: 12px;
     }
-
+    .our-community .slick-dots button {
+        display: none;
+    }
+    .copyright_section {
+        margin-bottom: 100px !important;
+    }
+    .footer-social li {
+        margin-right: 14px;
+    }
 }
 
 /* ======================
@@ -521,7 +529,35 @@
     .modal a.close-modal {
         top: 36px;
     }
-
+    .footer-social {
+        text-align: left !important;
+    }
+    .elementor-popup-modal .dialog-message {
+        overflow: auto !important;
+    }
+    .elementor-popup-modal .dialog-message .elementor-container {
+        display: block !important;
+    }
+    .footer p{
+        margin-bottom: 16px !important;
+    }
+    .universe-container {
+        padding: 0 15px;
+    }
+    .telescope-section .section_description .elementor-widget-container {
+        margin-top: 20px !important;
+    }
+    .our-community .slide_item_content {
+        padding: 0 15px;
+        margin-top: 40px;
+    }
+    .our-community .slide_content p {
+        font-size: 18px;
+        line-height: 1.32em;
+    }
+    .community-section h2,.news-section h2.elementor-heading-title {
+        font-size: 33px !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -563,7 +599,7 @@
         padding: 50px 18px !important;
     }
 
-    .telescope-section .section_title h2 {
+    .telescope-section .section_title h2,.our-community .slide_title {
         font-size: 24px !important;
     }
 
@@ -696,7 +732,8 @@
     /*    max-width: 70%;*/
     /*}*/
     .footer-top-content .subscribe-section h2 {
-        font-size: 24px;
+        font-size: 24px !important;
+        margin-bottom: 10px;
     }
 
     .mc4wp-form-fields::after {
