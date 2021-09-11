@@ -11,11 +11,7 @@ $footer_script        = ( ! empty( $theme_options['footer-script'] ) ) ? $theme_
     <div class="footer-container">
         <div class="footer-top-content">
             <div class="subscribe-section">
-                <h2><?php echo esc_attr( $footer_top_title ); ?></h2>
-                <p><?php echo esc_attr( $footer_top_sub_title ); ?></p>
-                <div class="subscribe_form">
-					<?php echo do_shortcode( $theme_options['theme-footer-top-newsletter-form'] ); ?>
-                </div>
+				<?php echo do_shortcode( '[elementor-template id="997"]' ) ?>
             </div>
         </div>
     </div>
