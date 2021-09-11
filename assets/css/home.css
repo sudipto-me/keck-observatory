@@ -1,6 +1,9 @@
 /* ======================
 ==    Home page CSS start
 ========================*/
+.home main section:first-child {
+    margin-top: 0 !important;
+}
 .home .main_header {
     background-color: transparent;
 }

@@ -175,6 +175,9 @@ a.site_cta.hide {
     margin-left: auto;
     margin-right: auto;
 }
+main section:first-child {
+    margin-top: 100px;
+}
 
 /* ======================
 ==    Header CSS start

@@ -1,8 +1,4 @@
 /* Blog CSS */
-main section:first-child {
-    margin-top: 100px;
-}
-
 .blog_featured_post {
     background: #ffffff;
     border-radius: 15px;
