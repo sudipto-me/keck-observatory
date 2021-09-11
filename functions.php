@@ -29,11 +29,6 @@ require_once get_theme_file_path( '/lib/script-functions.php' );
 require_once get_theme_file_path( '/lib/widget-functions.php' );
 require_once get_theme_file_path( '/lib/theme-functions.php' );
 
-// Define path and URL to the ACF plugin.
-define( 'THEME_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
-define( 'THEME_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
-include_once( THEME_ACF_PATH . 'acf.php' );
-
 // Define constants
 define( 'KECK_OBSERVATORY_THEME_VERSION', '1.0.0' );
 
@@ -81,12 +76,6 @@ function register_custom_widgets( $elementor ) {
 }
 
 add_action( 'elementor/widgets/widgets_registered', 'register_custom_widgets' );
-
-// update acf assets url
-add_filter( 'acf/settings/url', 'theme_acf_settings_url' );
-function theme_acf_settings_url( $url ) {
-	return THEME_ACF_URL;
-}
 
 
 // modal content
