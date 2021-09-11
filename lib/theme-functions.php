@@ -20,14 +20,9 @@ function support_theme_features() {
 	add_filter( 'excerpt_more', 'read_more_callback_function' );
 	add_filter( 'widget_text', 'do_shortcode' );
 	register_nav_menus( array(
-		'primary_navigation' => __( 'Primary Navigation', 'abcd' ),
-		'footer_navigation'  => __( 'Footer Navigation', 'abcd' ),
-		'my-account'         => __( 'My Account', 'abcd' ),
+		'primary_navigation' => __( 'Primary Navigation', 'keck-observatory' ),
+		'footer_social_menu'  => __( 'Footer Social Menu', 'keck-observatory' ),
 	) );
-	//load_theme_textdomain( 'biermann' , get_template_directory().'/languages' );
-	if ( current_user_can( 'edd_subscriber' ) ) {
-		show_admin_bar( false );
-	}
 }
 
 add_filter( 'wp_nav_menu_items', 'keck_add_menu_item', 10, 2 );
@@ -40,8 +35,11 @@ add_filter( 'wp_nav_menu_items', 'keck_add_menu_item', 10, 2 );
  * @return mixed
  */
 function keck_add_menu_item( $items, $args ) {
-	$header_btn_url  = ( ! empty( get_theme_mod( 'donate-page' ) ) ) ? get_theme_mod( 'donate-page' ) : '#';
-	$items           .= '<li class="site_cta"><a href="' . $header_btn_url . '">' . esc_html__( 'Donate', 'keck-observatory' ) . '</a>';
+	if ( 'slug' === $args->menu->slug ) {
+		$header_btn_url  = ( ! empty( get_theme_mod( 'donate-page' ) ) ) ? get_theme_mod( 'donate-page' ) : '#';
+		$items           .= '<li class="site_cta"><a href="' . $header_btn_url . '">' . esc_html__( 'Donate', 'keck-observatory' ) . '</a>';
+	}
+
 
 	return $items;
 }

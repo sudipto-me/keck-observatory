@@ -50,27 +50,28 @@ $footer_script        = ( ! empty( $theme_options['footer-script'] ) ) ? $theme_
 
     <section class="copyright_section area">
         <div class="footer-container clearfix">
-			<?php if ( ! empty( $copyright ) ) {
-				echo '<div class="float-left copyright-text">';
-				echo '<p>' . do_shortcode( $copyright );
-				echo '</p></div>';
-			} else {
-				echo do_shortcode( '<p>' . "&copy; [display_year] W. M. Keck Observatory." . '</p>' );
-			} ?>
-
-            <div class="float-right footer-social">
-				<?php
-				$theme_options = get_option( 'theme-options' );
-				$social_links  = $theme_options['theme-social-repeater'];
-				if ( is_array( $social_links ) && ! empty( $social_links ) ) {
-					?>
-                    <ul>
-						<?php foreach ( $social_links as $social ) { ?>
-                            <li><a href="<?php echo $social['social-link']; ?>"><?php echo $social['social-name']; ?></a></li>
-						<?php } ?>
-                    </ul>
-				<?php } ?>
-            </div>
+            <?php echo do_shortcode('[elementor-template id="1011"]');?>
+<!--			--><?php //if ( ! empty( $copyright ) ) {
+//				echo '<div class="float-left copyright-text">';
+//				echo '<p>' . do_shortcode( $copyright );
+//				echo '</p></div>';
+//			} else {
+//				echo do_shortcode( '<p>' . "&copy; [display_year] W. M. Keck Observatory." . '</p>' );
+//			} ?>
+<!---->
+<!--            <div class="float-right footer-social">-->
+<!--				--><?php
+//				$theme_options = get_option( 'theme-options' );
+//				$social_links  = $theme_options['theme-social-repeater'];
+//				if ( is_array( $social_links ) && ! empty( $social_links ) ) {
+//					?>
+<!--                    <ul>-->
+<!--						--><?php //foreach ( $social_links as $social ) { ?>
+<!--                            <li><a href="--><?php //echo $social['social-link']; ?><!--">--><?php //echo $social['social-name']; ?><!--</a></li>-->
+<!--						--><?php //} ?>
+<!--                    </ul>-->
+<!--				--><?php //} ?>
+<!--            </div>-->
         </div>
         <!-- /.container -->
     </section>
