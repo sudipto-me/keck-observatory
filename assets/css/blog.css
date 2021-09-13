@@ -918,6 +918,11 @@ h4.comment_user_name {
 .featured_video_wrapper .slick-list {
     margin: 0 -14px 0 0;
 }
+.featured_video_carousel .slick-slide img {
+    width: 252px;
+    height: 190px;
+    object-fit: cover !important;
+}
 
 .carousel_item {
     margin-top: 24px;

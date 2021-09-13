@@ -264,7 +264,7 @@ function post_listing_shortcode_callback( $attrs, $content = null ) {
 			'posts_per_page' => $posts_per_page,
 			'post_status'    => 'publish',
 			'orderby'        => 'date',
-			'order'          => 'ASC',
+			'order'          => 'DESC',
 			'paged'          => $paged,
 		);
 
@@ -438,7 +438,7 @@ function upcoming_event_listing_shortcode_callback( $attrs, $content = null ) {
 			'posts_per_page' => -1,
 			'post_status'    => 'publish',
 			'orderby'        => 'date',
-			'order'          => 'ASC',
+			'order'          => 'DESC',
 			'tax_query' => array(
 			         array(
 			                'taxonomy' => 'category',
@@ -553,13 +553,13 @@ function past_event_listing_shortcode_callback( $attrs, $content = null ) {
 			'posts_per_page' => $posts_per_page,
 			'post_status'    => 'publish',
 			'orderby'        => 'date',
-			'order'          => 'ASC',
+			'order'          => 'DESC',
 			'paged'          => $paged,
 			'tax_query' => array(
 			        array(
 			               'taxonomy' => 'category',
 					        'field'    => 'slug',
-					        'terms'    => 'event'
+					        'terms'    => 'events'
 			        )
 			),
 			'meta_query' => array(
