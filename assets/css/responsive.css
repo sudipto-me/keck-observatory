@@ -14,6 +14,15 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    .testimonials .slick-arrow.left {
+        bottom: -4%;
+        right: 51%;
+    }
+    .testimonials .slick-arrow.right {
+        bottom: -4%;
+        left: 51%;
+    }
+
 }
 
 @media (max-width: 1199px) {
@@ -142,11 +151,11 @@
         margin-bottom: 27px !important;
     }
 
-    .slick-arrow {
+    .our-community .slick-arrow {
         left: -16%;
     }
 
-    .slick-arrow.right {
+    .our-community .slick-arrow.right {
         left: 110%;
     }
     .blog_page_wrapper {
@@ -256,6 +265,14 @@
         height: 20px;
         top: 20px;
         right: 20px;
+    }
+    .testimonials .slick-arrow.left {
+        bottom: 2%;
+        right: 54%;
+    }
+    .testimonials .slick-arrow.right {
+        bottom: 2%;
+        left: 48%;
     }
 }
 
@@ -372,7 +389,7 @@
         margin-bottom: 27px !important;
     }
 
-    .slick-arrow.right {
+    .our-community .slick-arrow.right {
         left: 109%;
     }
     .sidebar-section {

@@ -125,10 +125,10 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        arrows: false,
-        dots: true,
-        prevArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid'>",
-        nextArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/left.png' class='img-fluid right'>",
+        arrows: true,
+        dots: false,
+        prevArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/testimonial-left.png' class='img-fluid left'>",
+        nextArrow: "<img src='../wp-content/themes/keck-observatory/assets/img/testimonial-left.png' class='img-fluid right'>",
         responsive: [
             {
                 breakpoint: 991,
